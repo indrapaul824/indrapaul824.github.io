@@ -1,3 +1,15 @@
+import Nav from '@/components/Nav'
+import ScrollProgress from '@/components/ScrollProgress'
+import Hero from '@/components/Hero'
+
 export default function Home() {
-  return <main><p className="p-16 text-text-muted">Building...</p></main>
+  return (
+    <>
+      <Nav />
+      <ScrollProgress />
+      <main>
+        <Hero />
+      </main>
+    </>
+  )
 }
