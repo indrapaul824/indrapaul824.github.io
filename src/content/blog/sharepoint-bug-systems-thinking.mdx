@@ -1,0 +1,45 @@
+---
+title: "How a SharePoint Bug Taught Me to Think in Systems"
+date: "2026-03-15"
+excerpt: "I found a security vulnerability hiding inside routine escalation tickets. It changed how I approach product work — from fighting fires to finding patterns."
+---
+
+In my first year at Moveworks, I resolved over 60 production escalations. Most of them felt like one-off issues — a permission mismatch here, a failed ingestion there. I was proud of my closure rate. I was also completely missing the point.
+
+## The ticket that changed everything
+
+Somewhere around escalation number 80, I noticed something strange. A customer's SharePoint integration was returning files that users shouldn't have been able to see. Not a lot of files — just enough to be alarming. The obvious fix was to patch the specific customer's configuration and move on. That's what I would have done six months earlier.
+
+Instead, I pulled the thread.
+
+## From symptom to system
+
+I dug into our SharePoint NG connector's permission caching layer and found a **Group Cache Key Collision** — a subtle bug where two different SharePoint security groups could hash to the same cache key under specific conditions. The result: users in Group A could occasionally see files permissioned only for Group B.
+
+This wasn't a configuration error. It was a systemic vulnerability that could affect any customer with overlapping group structures — which, in enterprise SharePoint, is nearly all of them.
+
+I wrote up the RCA, flagged it with engineering, and we shipped a fix. But the real lesson wasn't the bug itself.
+
+## Patterns over tickets
+
+That investigation made me go back through my escalation history with fresh eyes. I started tagging tickets by root cause category instead of customer name. Three systemic patterns emerged:
+
+1. **MSGraph incremental webhook deletes were silently failing** — content that customers deleted from SharePoint wasn't being removed from our search index
+2. **Content deletion gaps across multiple connectors** — a broader version of the same problem, not limited to SharePoint
+3. **Permission model inconsistencies** between our legacy and NG connector architectures
+
+Each of these was hiding inside dozens of "one-off" tickets that I and my teammates had been closing individually.
+
+## Building the system, not just fixing the bug
+
+I turned these patterns into tracked projects. The content deletion gap became a roadmap item. The permission inconsistencies fed into our connector consolidation initiative. And I built a **Claude-assisted integration playbook** — a standardized process for how we develop and test new connectors, so the next person doesn't have to rediscover these edge cases from scratch.
+
+Later, I drove **Config Change Detection** — an automated system that detects when a customer's connector configuration changes and triggers the appropriate sync jobs. No more manual full syncs. No more waiting for a customer to report stale content.
+
+## What I actually learned
+
+The PM skill I'm most proud of developing isn't prioritization frameworks or stakeholder management. It's **pattern recognition across noisy data**. Escalation tickets are the enterprise equivalent of user feedback — messy, emotional, and full of signal if you know how to read them.
+
+Most PMs I know treat escalations as a tax on their time. I treated them as the most honest product feedback I'd ever get — because when a Fortune 500 customer's search results are wrong, nobody's being polite about it.
+
+The 150+ escalations I've resolved weren't a distraction from product work. They *were* the product work. Every systemic fix I shipped started as a pattern I noticed in tickets that everyone else was closing and forgetting.

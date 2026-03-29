@@ -1,0 +1,58 @@
+---
+title: "When the Right Answer Is No: Saying No to General Motors"
+date: "2026-02-20"
+excerpt: "We spent weeks on discovery for a WhatsApp integration. Then we killed it — even though one of the world's largest companies was asking for it. Here's why."
+---
+
+General Motors wanted a WhatsApp integration for Moveworks. That's not a request you ignore. GM is one of the world's largest companies, and their ask was straightforward: let employees interact with the Moveworks AI assistant via WhatsApp.
+
+We said no.
+
+Not "not yet." Not "it's on the roadmap." No.
+
+## The discovery that killed the feature
+
+When the request came in, we didn't immediately start scoping. We started with discovery — deep technical research into WhatsApp's Business API, its capabilities, its constraints, and how it would interact with Moveworks' full feature set.
+
+What we found was sobering:
+
+**WhatsApp's messaging model is fundamentally different from Slack or Teams.** The session-based architecture, 24-hour response windows, and template message requirements meant that most of Moveworks' interactive capabilities — approval workflows, live agent handoff, rich card responses, proactive notifications — would either break entirely or degrade to a point where the experience wouldn't meet our quality bar.
+
+The integration would have been technically possible. It would have been a bad product.
+
+## The cost of saying yes
+
+Here's what a "yes" would have looked like:
+
+- **Engineering time**: 2-3 months of a senior engineer's time to build and maintain a channel adapter for a messaging platform with different semantics than everything else we support
+- **Ongoing maintenance**: WhatsApp's API changes frequently, and Meta's business platform policies shift with little warning
+- **Quality debt**: We'd ship a Moveworks experience that could only do 40% of what Slack or Teams can do, but customers would expect 100%
+- **Support load**: Every limitation would become an escalation — "Why can't I approve this PO from WhatsApp like I can from Slack?"
+
+We'd be building a feature that makes one customer happy and creates a support burden for years.
+
+## What we did instead
+
+We offered GM the **Moveworks Conversations API** — a well-documented, flexible API that lets customers build their own channel integrations. If WhatsApp was critical to their workflow, they had the tools to build exactly the experience they needed, tailored to their specific use cases.
+
+This wasn't a cop-out. The Conversations API was a real product, already in beta with other customers. We were offering them more control, not less.
+
+## Why this decision mattered
+
+Every PM has a version of this story — the feature request that's loud, important, and wrong. What made this one instructive for me was the process:
+
+1. **We didn't say no from the gut.** We invested weeks in legitimate discovery. We mapped the WhatsApp API's capabilities against our feature matrix. We built a proof-of-concept to test the integration points. The "no" was earned through research, not assumed.
+
+2. **We quantified the opportunity cost.** The engineering time for WhatsApp could instead go toward improving our SharePoint and ServiceNow integrations — systems that 80% of our customers actually use daily. That trade-off was explicit in the decision doc.
+
+3. **We offered an alternative that preserved the relationship.** Saying "no" without an alternative is just a dead end. The Conversations API gave GM a path forward while keeping our engineering focused on the highest-leverage work.
+
+## The PM lesson
+
+The hardest part of product management isn't figuring out what to build. It's figuring out what *not* to build — especially when a marquee customer is asking for it.
+
+Revenue pressure, relationship dynamics, and the fear of losing a deal all push toward "yes." But a PM's job is to protect the product's integrity over any single deal. A mediocre WhatsApp integration would have hurt Moveworks' reputation more than saying no ever could.
+
+The best PMs I've worked with share this instinct: they treat discovery as a tool for finding reasons to *not* build something, not just for validating what they've already decided to build.
+
+Sometimes the most valuable thing a PM ships is a well-reasoned "no."

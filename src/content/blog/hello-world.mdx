@@ -1,0 +1,53 @@
+---
+title: "Why MCP Search Isn't Enough: The Case for Agentic RAG"
+date: "2026-03-29"
+excerpt: "Everyone's excited about MCP-based federated search. But when you have billions of enterprise documents, federation hits a wall. Here's what comes next."
+---
+
+There's a lot of excitement right now about MCP servers enabling AI agents to search across enterprise systems. Connect your agent to SharePoint, ServiceNow, Confluence, and Zendesk via MCP, and you've got federated enterprise search. Problem solved, right?
+
+Not quite.
+
+## The federation wall
+
+I work on Moveworks' content platform — the system that ingests, indexes, and permissions enterprise content so our AI assistant can answer questions. Every day, I see what happens when you try to search across billions of documents in real time.
+
+Federated search via MCP has a fundamental scaling problem: **it pushes the search complexity to query time.** When a user asks "What's our PTO policy for the London office?", a federated approach has to:
+
+1. Fan out the query to every connected system
+2. Wait for each system's API to respond (with wildly varying latency)
+3. Merge and rank results across different schemas and relevance models
+4. Apply permissions filtering per system
+5. Return results before the user loses patience
+
+At 5 systems and a few thousand documents per system, this works fine. At 16+ enterprise systems with millions of documents each, it falls apart. Response times balloon. Permissions get complex. Relevance suffers because you're comparing apples from SharePoint to oranges from ServiceNow.
+
+## The two halves of agentic AI
+
+The agentic AI world has two parts:
+
+1. **Searching for information** — finding the right context from vast, permissioned, multi-system enterprise data
+2. **Acting on it** — executing workflows, updating records, triggering approvals
+
+Acting is getting easier every month. LLMs are better at planning, MCP makes tool integration straightforward, and function calling is table stakes. But searching — *really* searching, with permission awareness, freshness, relevance ranking, and sub-second latency across billions of documents — is still hard.
+
+## Why agentic RAG is the unlock
+
+The answer isn't better federation. It's **agentic RAG** — a retrieval layer that's intelligent enough to:
+
+- **Pre-index and permission** content at ingestion time, not query time
+- **Route queries** to the most likely systems based on intent, rather than fanning out to everything
+- **Iteratively refine** retrieval — if the first pass doesn't have enough signal, the agent can reformulate and search again with different parameters
+- **Provide focused context windows** to the LLM, rather than dumping raw search results and hoping the model figures it out
+
+This is what I think about when I build integrations at work. Each connector isn't just a pipe that moves data — it's a decision about what content enters the retrieval layer, how it's permissioned, how fresh it stays, and how it ranks against content from other systems.
+
+The PM work here isn't glamorous. It's permission models, ingestion pipelines, incremental sync reliability, and config change detection. But it's the foundation that determines whether an AI assistant gives a great answer or a wrong one.
+
+## What this means for PMs building AI products
+
+If you're a PM working on AI-powered products, the search layer deserves as much attention as the model layer. A smarter LLM can't compensate for bad retrieval. The RAG pipeline is where most AI product quality is won or lost.
+
+The PMs who understand this — who can reason about embeddings, chunking strategies, permission propagation, and ingestion latency — will build better AI products than those who treat retrieval as someone else's problem.
+
+That's why I'm learning this stack from the ground up. Not because my job title requires it, but because the products I want to build demand it.
