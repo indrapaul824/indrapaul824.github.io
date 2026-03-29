@@ -26,7 +26,7 @@ export default function Hero() {
 
           <RevealOnScroll delay={0.1}>
             <p className="font-dm text-lg text-text-muted leading-relaxed mb-8 max-w-md">
-              Product manager at <strong className="text-text-primary font-medium">Moveworks (ServiceNow)</strong> — owning enterprise search and the content platform that powers AI answers for Fortune 500 companies.
+              Product manager at <strong className="text-text-primary font-medium">Moveworks (ServiceNow)</strong> — owning the content platform and self-serve experience that powers enterprise search for Fortune 500 companies.
             </p>
           </RevealOnScroll>
 

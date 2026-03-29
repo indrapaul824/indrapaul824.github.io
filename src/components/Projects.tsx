@@ -4,10 +4,10 @@ import RevealOnScroll from './RevealOnScroll'
 const caseStudies = [
   {
     name: 'Content Platform',
-    problem: 'Enterprise AI answers are only as good as the content feeding them. Customers needed secure, permissioned access across 16+ SaaS systems — each with different APIs, permission models, and ingestion patterns. A Glean comparison showed gaps in our ingestion times, incremental sync, and permissions coverage.',
-    insight: 'Through 150+ escalation investigations, I discovered systemic issues hiding beneath individual tickets — flaky MSGraph webhook deletes, content deletion gaps, and a critical SharePoint Group Cache Key Collision that was causing unauthorized file access across customer orgs.',
-    action: 'Prioritized integrations by revenue impact and deal risk — not request volume. Built a Claude-assisted playbook that standardized how we develop connectors, cutting future build time. Drove Config Change Detection to eliminate manual full syncs. Shipped permission-aware integrations for SharePoint, ServiceNow, Salesforce, Zendesk, Notion, and more.',
-    result: 'Directly drove 30+ customer renewals/upsells and 5+ prospect deal closures. Unblocked the Enterprise Search go-to-market motion. The security RCA became a case study in our internal PM onboarding.',
+    problem: 'Enterprise AI answers are only as good as the content feeding them. Customers needed secure, permissioned access across 16+ SaaS systems — each with different APIs, permission models, and ingestion patterns. Competitive analysis revealed gaps in our ingestion speed, incremental sync, and permissions coverage.',
+    insight: 'Through 150+ escalation investigations, I discovered systemic issues hiding beneath individual tickets — recurring failure modes in content sync, permission propagation, and deletion handling that no one was tracking because each instance looked like a one-off.',
+    action: 'Prioritized integrations by revenue impact and deal risk — not request volume. Built standardized playbooks that cut future integration build time. Drove automated change detection to eliminate manual sync operations. Shipped permission-aware integrations across all major enterprise content systems.',
+    result: 'Directly drove 30+ customer renewals/upsells and 5+ prospect deal closures. Unblocked the Enterprise Search go-to-market motion and gave partners confidence to adopt the new self-serve setup journey.',
     metric: '30+',
     metricLabel: 'Renewals & deals driven',
     link: '/blog/content-platform-case-study',
@@ -15,9 +15,9 @@ const caseStudies = [
   {
     name: 'AI Agent Marketplace',
     problem: 'Moveworks needed a scalable way for customers to discover and install AI agent capabilities. Plugin production was bottlenecked at ~3-4 guides per month, making a marketplace launch impossible at that velocity.',
-    insight: 'The bottleneck wasn\'t engineering — it was the research and production pipeline. Each plugin guide required deep API research, system-specific nuance, and Creator Studio expertise. No single person could scale it.',
-    action: 'Led a team of Product Analysts. Collaborated with the Creator Studio PM to define a production roadmap. Standardized the research-to-publish pipeline. Managed the API product lifecycle from beta through GA, collecting feedback from 8 customers in beta1 and 20+ in beta2.',
-    result: 'Increased production velocity from ~3-4/month to ~18-20/month (5x). Enabled 100+ installable plugins and the official Marketplace launch. Data API feedback loop shaped v1.',
+    insight: 'The bottleneck wasn\'t engineering — it was the research and production pipeline. Each plugin required deep API research, system-specific nuance, and platform expertise. No single person could scale it.',
+    action: 'Led a team of Product Analysts. Defined the production roadmap with the platform PM. Standardized the research-to-publish pipeline. Managed the API product lifecycle from beta through GA, collecting customer feedback at each stage to shape the final release.',
+    result: 'Increased production velocity from ~3-4/month to ~18-20/month (5x). Enabled 100+ installable plugins and the official Marketplace launch. Customer feedback loop from beta directly shaped the GA product.',
     metric: '5x',
     metricLabel: 'Production velocity',
     link: '/blog/marketplace-case-study',

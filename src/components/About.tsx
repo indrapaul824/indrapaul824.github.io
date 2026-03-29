@@ -8,10 +8,10 @@ export default function About() {
         <RevealOnScroll>
           <div className="text-lg leading-relaxed text-text-muted space-y-5 max-w-xl">
             <p>
-              I joined Moveworks as an intern in 2023, straight out of my M.Tech at VIT Bhopal. Within two and a half years, I went from triaging production escalations to owning enterprise search strategy and content platform roadmaps — four promotions, zero job changes.
+              I joined Moveworks as an intern in 2023, straight out of my M.Tech at VIT Bhopal. Within two and a half years, I went from triaging production escalations to owning the content platform and the self-serve experience that takes enterprise search to market — four promotions, zero job changes.
             </p>
             <p>
-              The escalations were the real education. Investigating 150+ issues across SharePoint, ServiceNow, and Salesforce connectors, I started seeing systemic patterns — flaky MSGraph webhooks, permission cache collisions, content deletion gaps. I turned those patterns into tracked projects: a Claude-assisted integration playbook that standardized how we build connectors, config change detection that eliminated manual full syncs, and runbooks that cut repeat incidents across the team.
+              The escalations were the real education. Investigating 150+ issues across enterprise SaaS connectors, I stopped seeing individual tickets and started seeing systemic patterns — recurring failure modes that no one was tracking because each instance looked like a one-off. I turned those patterns into roadmap items: standardized playbooks, automated detection systems, and runbooks that cut repeat incidents across the team.
             </p>
             <p>
               Outside work, I&apos;m rebuilding my understanding of AI from first principles — not because I need to train models, but because the products I own sit at the heart of the agentic AI stack. Enterprise search is only as good as the content feeding it. Understanding embeddings, retrieval, and inference helps me write sharper specs and ask better questions of the ML engineers I work with daily.
