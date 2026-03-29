@@ -1,9 +1,9 @@
 import RevealOnScroll from './RevealOnScroll'
 
 const stats = [
-  { number: '16+', label: 'SaaS integrations shipped' },
-  { number: '100+', label: 'Marketplace plugins launched' },
-  { number: '30+', label: 'Enterprise customers impacted' },
+  { number: '30+', label: 'Customer renewals & deal closures driven' },
+  { number: '5x', label: 'Marketplace production velocity increase' },
+  { number: '4', label: 'Promotions in 2.5 years — intern to PM' },
 ]
 
 const tags = ['Enterprise AI', 'Content Platforms', 'Search & Retrieval']
@@ -26,7 +26,7 @@ export default function Hero() {
 
           <RevealOnScroll delay={0.1}>
             <p className="font-dm text-lg text-text-muted leading-relaxed mb-8 max-w-md">
-              Product manager at <strong className="text-text-primary font-medium">Moveworks (ServiceNow)</strong> — shipping enterprise search, content platforms, and SaaS integrations at scale.
+              Product manager at <strong className="text-text-primary font-medium">Moveworks (ServiceNow)</strong> — owning enterprise search and the content platform that powers AI answers for Fortune 500 companies.
             </p>
           </RevealOnScroll>
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sora.variable} ${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sora.variable} ${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
         <link rel="icon" href="/images/favicon.webp" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZMBM5D60Z" />

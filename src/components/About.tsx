@@ -11,10 +11,10 @@ export default function About() {
               I joined Moveworks as an intern in 2023, straight out of my M.Tech at VIT Bhopal. Within two and a half years, I went from triaging production escalations to owning enterprise search strategy and content platform roadmaps — four promotions, zero job changes.
             </p>
             <p>
-              The escalations were the real education. Debugging permission failures across SharePoint, ServiceNow, and Salesforce connectors taught me more about enterprise software than any course could. I learned to think in systems — ingestion pipelines, access control models, cross-region data flows.
+              The escalations were the real education. Investigating 150+ issues across SharePoint, ServiceNow, and Salesforce connectors, I started seeing systemic patterns — flaky MSGraph webhooks, permission cache collisions, content deletion gaps. I turned those patterns into tracked projects: a Claude-assisted integration playbook that standardized how we build connectors, config change detection that eliminated manual full syncs, and runbooks that cut repeat incidents across the team.
             </p>
             <p>
-              Outside work, I'm rebuilding my understanding of AI from first principles. Not because I need to train models at work, but because I think the PMs who shape the next wave of AI products will be the ones who can reason about what's happening under the hood — not just what the API returns.
+              Outside work, I&apos;m rebuilding my understanding of AI from first principles — not because I need to train models, but because the products I own sit at the heart of the agentic AI stack. Enterprise search is only as good as the content feeding it. Understanding embeddings, retrieval, and inference helps me write sharper specs and ask better questions of the ML engineers I work with daily.
             </p>
           </div>
         </RevealOnScroll>
@@ -24,7 +24,7 @@ export default function About() {
             <div>
               <div className="font-space text-[11px] text-text-faint uppercase tracking-[0.1em] mb-3">Currently</div>
               <div className="text-[15px] text-text-muted leading-relaxed pl-4 border-l-2 border-accent/20">
-                Building a <strong className="text-text-primary font-medium">neural network from scratch</strong> in NumPy — learning backpropagation at the matrix level
+                Building a <strong className="text-text-primary font-medium">neural network from scratch</strong> in NumPy — learning backpropagation at the matrix level to reason better about the ML systems I spec at work
               </div>
             </div>
           </RevealOnScroll>
@@ -33,7 +33,7 @@ export default function About() {
             <div>
               <div className="font-space text-[11px] text-text-faint uppercase tracking-[0.1em] mb-3">Reading</div>
               <div className="text-[15px] text-text-muted leading-relaxed pl-4 border-l-2 border-accent/20">
-                <strong className="text-text-primary font-medium">&ldquo;Designing Data-Intensive Applications&rdquo;</strong> by Martin Kleppmann
+                <strong className="text-text-primary font-medium">&ldquo;Designing Data-Intensive Applications&rdquo;</strong> — because our multi-region expansion exposed gaps in how I think about ingestion pipelines and eventual consistency
               </div>
             </div>
           </RevealOnScroll>
@@ -42,7 +42,7 @@ export default function About() {
             <div>
               <div className="font-space text-[11px] text-text-faint uppercase tracking-[0.1em] mb-3">Thinking about</div>
               <div className="text-[15px] text-text-muted leading-relaxed pl-4 border-l-2 border-accent/20">
-                Why enterprise AI adoption stalls at <strong className="text-text-primary font-medium">connector setup and permissions</strong>, not model quality
+                Why <strong className="text-text-primary font-medium">federated search via MCP isn&apos;t enough</strong> when you have billions of enterprise documents — and why agentic RAG is the real unlock for AI-powered answers
               </div>
             </div>
           </RevealOnScroll>
